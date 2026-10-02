@@ -29,4 +29,19 @@ public final class CourseToolkit {
         else
             return false;
     }
+
+    public static boolean isPalindrome(String text){
+        if(text==null)
+            throw new IllegalArgumentException();
+        int a = 0;
+        int le = text.length()-1;
+        for(int i=0; i<(le/2)+1; i++){
+            if(text.charAt(i)!=text.charAt(le-i))
+                a+=1;
+        }
+        if(a==0)
+            return true;
+        else
+            return false;
+    }
 }
