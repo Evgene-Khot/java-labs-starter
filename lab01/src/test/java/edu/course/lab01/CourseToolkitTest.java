@@ -96,5 +96,7 @@ class CourseToolkitTest {
             () -> CourseToolkit.average(new int[] {}));
         assertThrows(IllegalArgumentException.class,
             () -> CourseToolkit.average(null));
+    void Test_0_forOddNumber() {
+        assertTrue(CourseToolkit.isEven(0));
     }
 }
