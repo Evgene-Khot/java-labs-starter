@@ -69,4 +69,32 @@ class CourseToolkitTest {
                 CourseToolkit.isPalindrome(null);
         });
     }
+
+    @Test
+    void Test_1_ForValues() {
+        double result = CourseToolkit.average(new int[] {1,2,3});
+
+        boolean r = false;
+        if(result==2.0)
+            r = true;
+        assertTrue(r);
+    }
+
+    @Test
+    void Test_2_ForValues() {
+        double result = CourseToolkit.average(new int[] {-2,-6,-7});
+
+        boolean r = false;
+        if(result==-5.0)
+            r = true;
+        assertTrue(r);
+    }
+
+    @Test
+    void Test__ForValues() {
+        assertThrows(IllegalArgumentException.class,
+            () -> CourseToolkit.average(new int[] {}));
+        assertThrows(IllegalArgumentException.class,
+            () -> CourseToolkit.average(null));
+    }
 }
