@@ -8,6 +8,13 @@ public final class ProjectTask {
     private final String title;
     private TaskStatus status;
     private int estimatedHours;
+    
+    private static String requireText(String value, String fieldName) {
+        if (value == null || value.isBlank())
+            throw new IllegalArgumentException(fieldName + " не должен быть null или пустым");
+        
+        return value;
+    }
 
     public ProjectTask(String id, String title, TaskStatus status, int estimatedHours) {
         this.id = requireText(id, "id");
@@ -49,12 +56,5 @@ public final class ProjectTask {
             throw new IllegalArgumentException("Добавляемое число часов должно быть положительным");
 
         estimatedHours = Math.addExact(estimatedHours, hours);
-    }
-
-    private static String requireText(String value, String fieldName) {
-        if (value == null || value.isBlank())
-            throw new IllegalArgumentException(fieldName + " не должен быть null или пустым");
-        
-        return value;
-    }
+    }    
 }
